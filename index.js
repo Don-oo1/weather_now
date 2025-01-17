@@ -39,8 +39,8 @@ app.get("/weather/:latlon",async (request,response)=>{
     const lat = latlon[0]
     const lon = latlon[1]
 
-    // const key = process.env.API_KEY
-const key = '46875b2080b14c61919112959250601'
+    const key = process.env.API_KEY
+
     const API = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${lat},${lon}&aqi=no`
 
     const response_weather = await fetch(API)
