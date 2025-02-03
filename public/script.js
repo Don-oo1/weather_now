@@ -7,14 +7,12 @@ navigator.geolocation.getCurrentPosition( async (pos)=>{
     const response = await fetch(API)
     const json = await response.json()
     console.log(json)
-     const headLine = `It is ${json.current.condition.text} feels like ${json.feelslike_c}°C at ${latitude},${longitude}`
+     const headLine = `It is ${json.current.condition.text} feels like ${json.current.feelslike_c}°C at ${latitude},${longitude}`
      document.querySelector("#head-line").textContent = headLine
      
      
 
 })
-
-
 
 document.querySelector("#check-in").addEventListener("click", ()=>{
     
